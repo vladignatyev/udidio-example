@@ -7,14 +7,13 @@ from heroku import HerokuRequest
 app = flask.Flask(__name__)
 
 app.secret_key = 'Your secret key.'
-app.config.update(DEBUG=os.environ.get('DEBUG', '0') == '1')
 
-SERVER_NAME = ''
+app.debug = os.environ.get('DEBUG', False) == '1'
 
 if app.debug:
     pass
 else:
-    app.config.update(SERVER_NAME=SERVER_NAME)
+    app.config.update(SERVER_NAME=os.environ['SERVER_NAME'])
     app.request_class = HerokuRequest
 
 app.config.update(HTTP_PREFIX='http://')
