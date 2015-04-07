@@ -60,13 +60,13 @@ def postback():
 	The UDID.io service will send a POST request to this endpoint.
 	Values send with the POST request will contain UDID, IMEI, Product, Version and Serial No.
 	"""
-	udid = request.args.get('udid')
+	udid = request.form.get('udid')
 
 	# fields
-	imei = request.args.get('imei')
-	product = request.args.get('product')
-	version = request.args.get('version')
-	serial = request.args.get('serial')
+	imei = request.form.get('imei')
+	product = request.form.get('product')
+	version = request.form.get('version')
+	serial = request.form.get('serial')
 
 	return 'Device UDID is: %s' % udid
 
