@@ -26,7 +26,8 @@ app.config.update(HTTP_PREFIX=http_prefix)
 
 @app.route('/')
 def hello_world():
-	callback = url_for('.postback')
+	callback = ''.join(http_prefix, server_name, url_for('.postback'))
+
 	service = 'UDID registration test app'
 	
 	api_link = 'https://get.udid.io/thirdparty/api/?callback=%(callback)s&service=%(service)s&schemeurl=0' % {
