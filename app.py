@@ -24,7 +24,7 @@ def hello_world():
 	callback = ''
 	service = 'UDID registration test app'
 	
-	api_link = 'https://get.udid.io/thirdparty/api/?callback=%(callback)s&service=%(service)s' % {
+	api_link = 'https://get.udid.io/thirdparty/api/?callback=%(callback)s&service=%(service)s&schemeurl=0' % {
 		'callback': callback,
 		'service': service
 	}
