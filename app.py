@@ -26,7 +26,7 @@ app.config.update(HTTP_PREFIX=http_prefix)
 
 @app.route('/')
 def hello_world():
-	callback = ''.join(http_prefix, server_name, url_for('.postback'))
+	callback = ''.join((http_prefix, server_name, url_for('.postback')))
 
 	service = 'UDID registration test app'
 	
